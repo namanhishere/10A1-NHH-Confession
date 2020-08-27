@@ -2,11 +2,8 @@
 <html lang="en">
   <head>
     <title>Confession</title>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
@@ -27,15 +24,12 @@
         <p>Bấm vào cái nút đó thôi rồi chờ đợi kết quá :)))</p>
       </div>
     </div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   </body>
   <script>
     let nut = document.getElementById("nut");
     
     nut.addEventListener("click",() =>{
       let confession_content = document.getElementById('content').value;
-      
       let xacthuc = confirm(`Bạn có chắc chắn muốn post confession có nội dung: \n` +confession_content) 
       if(xacthuc === true){fetch(`/api/post?content=${confession_content}`,{method: 'POST'}
       ).then(e => {return e.json()}).then(res => {
