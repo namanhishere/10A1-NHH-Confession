@@ -10,7 +10,7 @@ router.post('/post', async function(req, res, next) {
         console.log(d[0].access_token_hien_tai)
         let confession_content = req.query.content
         database.query(`UPDATE thong_tin_he_thong SET confession_hien_tai = ${confess_num} WHERE rootchar = 1`)
-        let content = `#Confession_số_${confess_num}:\n${confession_content}\n\n\n//Đăng tải confession của bạn tại:https://nhh-10a1-confession.herokuapp.com/\n\n#10a1 #confession #chuyen_tuoi_hong`
+        let content = `#Confession_số_${confess_num}:\n${confession_content}\n\n\n//Đăng tải confession của bạn tại:http://nhh10a1.xyz/\n\n#10a1 #confession #chuyen_tuoi_hong`
         superagent.post("https://graph.facebook.com/225864295529972/feed").send({
             message:content,
             access_token: d[0].access_token_hien_tai
