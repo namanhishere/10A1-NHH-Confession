@@ -6,4 +6,9 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.get('/nhac', function(req, res, next) {
+  res.redirect('https://google.com');
+});
+
+
 module.exports = router;
